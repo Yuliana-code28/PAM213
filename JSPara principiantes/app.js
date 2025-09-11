@@ -9,6 +9,13 @@
 let password="pepe123";
 let input="pepe123"; 
 let result= input===password;
-console.log(result);
+if(result==true){
+    console.log("Login correcto");
+}else{
+    console.log("contraseña incorrecto");
+}
 
+//if(result==false){
+  //  console.log("Login incorrecto");
+//}
 
