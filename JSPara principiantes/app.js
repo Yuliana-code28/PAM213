@@ -1,26 +1,21 @@
-//score=70;
-//if(score>30){
-  //  console.log("you need to practice more");
+
+let count =0;
+//while(count<10){
+  //  console.log("Hello World");
+    //count=count-1;
 //}
-//if (score>){
-  //  console.log("Estas mejorando");
-//}
-//else{
-  //  console.log("You need to follow this tutorial");
-//}
-//EJEMPLO
-let typecard="Debit card";
-switch(typecard){
-    case "Credit card":
-        console.log("This is a debit card");
-        break;
-    case "Debit card":
-        console.log("This is a debit card");
-        break;
-    default:
-        console.log("No card");
-        break;
+while(count<50){
+    console.log("Hello World");
+    count++;
 }
 
-
+let names=["ryan","joeh","Mario"];
+//console.log(names[3]);
+//console.log(names.length);
+//for(let i=0;i<names.length;i++){
+  //  console.log(names[i]);
+//}
+for(let i=0;i<names.length-1;i--){
+    console.log(names[i]);
+}
 
