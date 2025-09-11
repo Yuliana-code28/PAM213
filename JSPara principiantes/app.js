@@ -1,8 +1,14 @@
-conosle.log("esto es una cadena");
-console.log(14.3);
-console.log(true);
-console.log([1,2,3]);
-var nameuser= "John";
-let lastmane="Carter";
-//console.log(nombredelusuario);
-console.log(lastmane);
+//let numberOne=100;
+//let numberTwo=50; 
+//let result=numberOne>numberTwo;
+//console.log(result);
+//let numberOne=100;
+//let numberTwo=50; 
+//let result=numberOne<numberTwo;
+//console.log(result);
+let password="pepe123";
+let input="pepe123"; 
+let result= input===password;
+console.log(result);
+
+
