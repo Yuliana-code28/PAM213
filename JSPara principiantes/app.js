@@ -1,21 +1,9 @@
-
-let count =0;
-//while(count<10){
-  //  console.log("Hello World");
-    //count=count-1;
-//}
-while(count<50){
-    console.log("Hello World");
-    count++;
+function add(n1,n2) {
+    console.log(n1,n2);
 }
+add(3,2);
+add (100,300);
 
-let names=["ryan","joeh","Mario"];
-//console.log(names[3]);
-//console.log(names.length);
-//for(let i=0;i<names.length;i++){
-  //  console.log(names[i]);
-//}
-for(let i=0;i<names.length-1;i--){
-    console.log(names[i]);
-}
-
+add(3,2);
+add (100,300);
+add(10,20);
