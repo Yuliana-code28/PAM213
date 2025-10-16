@@ -38,18 +38,19 @@ export default function MenuScreen (){
                 return (
                     <View>
                          <Text>Menu de practicas </Text>
-                         <Button title='Pract: Contador' onPress={()=> setScreen('contador')}/>
-                         <Button title='Pract: Buttons' onPress={()=> setScreen('botones')}/>
-                         <Button title='Pract: Text y input' onPress={()=> setScreen('input')}/>
-                        <Button title='Pract: Imagen y fondo' onPress={()=> setScreen('imagen')} />
-                        <Button title='Pract: Scroll View' onPress={()=> setScreen('scroll')} />
-                        <Button title='Pract: Activity Indicator' onPress={()=> setScreen('indicator')} />
-                        <Button title='Pract: Flatlist y Section List' onPress={()=> setScreen('flatlist')} />
-                        <Button title='Pract: Modal' onPress={()=> setScreen('modal')} />
-                        <Button title='Pract: Bottomsheet' onPress={()=> setScreen('bottomsheet')} />
+                         <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Contador' onPress={()=> setScreen('contador')}/>
+                         <Button color= 'hsla(266, 92%, 66%, 1.00)' title='Pract: Buttons' onPress={()=> setScreen('botones')}/>
+                         <Button color='hsla(266, 92%, 66%, 1.00)'  title='Pract: Text y input' onPress={()=> setScreen('input')}/>
+                        <Button color= 'hsla(266, 92%, 66%, 1.00)' title='Pract: Imagen y fondo' onPress={()=> setScreen('imagen')} />
+                        <Button color='hsla(266, 92%, 66%, 1.00)'  title='Pract: Scroll View' onPress={()=> setScreen('scroll')} />
+                        <Button color= 'hsla(266, 92%, 66%, 1.00)' title='Pract: Activity Indicator' onPress={()=> setScreen('indicator')} />
+                        <Button color= 'hsla(266, 92%, 66%, 1.00)' title='Pract: Flatlist y Section List' onPress={()=> setScreen('flatlist')} />
+                        <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Modal' onPress={()=> setScreen('modal')} />
+                        <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Bottomsheet' onPress={()=> setScreen('bottomsheet')} />
                         
                     </View>
                 );
+        
     }
     
 }
