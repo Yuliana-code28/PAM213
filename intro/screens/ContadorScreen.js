@@ -16,9 +16,9 @@ export default function App() {
       {/* Nueva vista */}
       <View style={styles.botonesContainer}> 
 
-      <Button color="red" title= "Agregar" onPress={()=>setContador(contador+1)}/> {/* al momento de presionar el boton, se ejecuta una función flecha que llama a setContador y al contador le suma 1 */}
-      <Button color="red" title= "Quitar" onPress={()=>setContador(contador-1)}/>
-      <Button color="red" title="Reiniciar" onPress={()=>setContador(0)}/>
+      <Button color='hsla(280, 77%, 36%, 1.00)' title= "Agregar" onPress={()=>setContador(contador+1)}/> {/* al momento de presionar el boton, se ejecuta una función flecha que llama a setContador y al contador le suma 1 */}
+      <Button color='hsla(207, 78%, 80%, 1.00)' title= "Quitar" onPress={()=>setContador(contador-1)}/>
+      <Button color='hsla(318, 100%, 65%, 1.00)' title="Reiniciar" onPress={()=>setContador(0)}/>
       <StatusBar style="auto" />
 
       </View>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    
+
     backgroundColor: 'hsla(53, 100%, 86%, 1.00)',
     alignItems: 'center', /* posiciona en el eje x */
     justifyContent: 'center', /* posiciona en el eje Y */
