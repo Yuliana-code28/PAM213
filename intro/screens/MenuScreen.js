@@ -9,6 +9,7 @@ import Indicator from './Indicator'
 import FlatlistScreen from './FlatlistScreen'
 import Modal from './Modal'
 import Bottomsheet from './Bottomsheet'
+import Practica11 from './Practica11.js'
 
 export default function MenuScreen (){
   
@@ -33,6 +34,8 @@ export default function MenuScreen (){
             return <Modal/>;
         case 'bottomsheet':
             return <Bottomsheet/>;
+        case 'Practica 11':
+            return <Practica11/>
         case 'menu':
             default:
                 return (
@@ -47,7 +50,7 @@ export default function MenuScreen (){
                         <Button color= 'hsla(266, 92%, 66%, 1.00)' title='Pract: Flatlist y Section List' onPress={()=> setScreen('flatlist')} />
                         <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Modal' onPress={()=> setScreen('modal')} />
                         <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Bottomsheet' onPress={()=> setScreen('bottomsheet')} />
-                        
+                        <Button color= 'hsla(230, 65%, 68%, 1.00)'  title='Pract 11' onPress={()=> setScreen('Practica 11')}/>
                     </View>
                 );
         
