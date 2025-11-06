@@ -1,66 +1,127 @@
-import React from 'react';
-import { View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity, ScrollView, Button, Alert, Platform} from 'react-native';
+import React, {useEffect, useState} from 'react'; 
+import { View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity, StatusBar } from 'react-native';
 
-const MenuScreens = () => { 
-  //estados
-  const { useState, useEffect } = React;
-  const {cancelable} = Alert;
-  //IMAGENES
-  const gato = require('../assets/recursos/gatito.jpg');
-  const jinx = require('../assets/recursos/Jinx.webp');
-  const hojas = require('../assets/recursos/hojas.jpg');
-  const flores= require('../assets/recursos/Flores.png');
-  const fondo= require('../assets/recursos/fondo.jpg');
-  const imagen= require('../assets/recursos/imagenuno.jpg');
- 
-const MostrarAlerta = (titulo, detalles) => {
-  if(Platform.OS === 'web'){
-    alert(`${titulo}\n\n${detalles}`);
-  }else{
-    Alert.alert(
-      titulo,
-      detalles,
-      [
-        { text: "Cerrar", onPress: () => console.log("Alerta cerrada") }
-      ],
-      { cancelable: true }
+const flores = require('../assets/recursos/gatito.jpg');
+const jinx = require('../assets/recursos/Jinx.webp');
+const fondo = require('../assets/recursos/fondo.jpg'); 
+const imagen = require('../assets/recursos/imagenuno.jpg');
+const hojas = require('../assets/recursos/Hojas.jpg');
+import Examen from './Examen';
+
+const MenuScreens = () => {
+ const[isLoading, setIsLoading] = useState (true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false); 
+      }, 3000); 
+      return () => clearTimeout(timer); 
+    }, []);
+    
+    if(isLoading){
+      return(
+        <ImageBackground
+        source={flores}
+        resizeMode="cover"
+        imageStyle={styles.splashImageStyle}
+        style={styles.splashBackground}
+        > 
+          <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
+          <View style={styles.splashOverlay}>
+            <Image source={jinx} style={styles.imagen} resizeMode='contain'/>
+            <Text style={styles.splashTitle}> Mi galeria </Text>
+            <Text style={styles.splashSubtitle}> Cargando aplicación... </Text>
+          </View>
+        </ImageBackground>
+      );
+}
+return(
+      <ImageBackground
+      source={hojas}
+      resizeMode="cover"
+      imageStyle={styles.mainImageStyle}
+      style={styles.mainBackground}
+      >
+       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
+       <View style={styles.mainOverlay}>
+        <Text style={styles.welcome}> Galeria </Text>
+        <TouchableOpacity
+        style={styles.button}
+        onPress={() => alert('Boton presionado')}
+        >
+          <Text style={styles.buttonText}> Empezar </Text>
+
+        </TouchableOpacity>
+       </View> 
+      </ImageBackground>
     );
   }
-}
-
-return (
-  <ScrollView contentContainerStyle={styles.container}>
-    <Text style={styles.title}>Mi galeria</Text>
-    <TouchableOpacity>
-      <ImageBackground 
-      source={gato} 
-      style={{ width: 300, height: 200, marginBottom: 20 }} 
-      imageStyle={{ borderRadius: 10 }}>
-        <Text style={styles.title}>Gato Blanco</Text>
-        <Text>Un gato blanco en un tejado.</Text>
-      </ImageBackground>
-      <Button title="Ver detalles"  />
-    </TouchableOpacity>
-
-    </ScrollView>
-  );
-  
-}; 
-
-
- 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1, 
+   const styles = StyleSheet.create({
+  splashBackground: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
     justifyContent: 'center',
-    alignItems: 'center', 
-    backgroundColor: '#fff', 
+    alignItems: 'center',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10, 
+  splashImageStyle: {
+    opacity: 0.85,
+  },
+
+  splashOverlay: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.45)', 
+    padding: 24,
+    borderRadius: 12,
+  },
+  imagen: {
+    width: 100,
+    height: 100,
+    marginBottom: 12,
+  },
+  splashTitle: {
+    color: '#fff',
+    fontSize: 26,
+    fontWeight: '700',
+  },
+  splashSubtitle: {
+    color: '#dbeafe',
+    marginTop: 8,
+  },
+
+  mainBackground: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  mainImageStyle: {
+    opacity: 0.9,
+  },
+  mainOverlay: {
+    alignItems: 'center',
+    backgroundColor: 'rgba(255,255,255,0.12)', 
+    padding: 20,
+    borderRadius: 12,
+  },
+  welcome: {
+    color: '#fff',
+    fontSize: 22,
+    marginBottom: 20,
+    fontWeight: '600',
+  },
+  button: {
+    backgroundColor: '#61dafb',
+    paddingHorizontal: 18,
+    paddingVertical: 10,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: '#000',
+    fontWeight: '700',
   },
 });
- 
-export default MenuScreens;  
+
+export default MenuScreens;
+
