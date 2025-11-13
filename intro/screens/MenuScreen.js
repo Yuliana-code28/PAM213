@@ -10,7 +10,7 @@ import FlatlistScreen from './FlatlistScreen'
 import Modal from './Modal'
 import Bottomsheet from './Bottomsheet'
 import Practica11 from './Practica11.js'
-
+import  SectionListScreen  from './SectionListScreen.js'
 export default function MenuScreen (){
   
     const[ screen, setScreen ]= useState( 'menu'); 
@@ -36,6 +36,8 @@ export default function MenuScreen (){
             return <Bottomsheet/>;
         case 'Practica 11':
             return <Practica11/>
+        case 'sectionlist':
+            return <SectionListScreen/>;
         case 'menu':
             default:
                 return (
@@ -51,6 +53,7 @@ export default function MenuScreen (){
                         <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Modal' onPress={()=> setScreen('modal')} />
                         <Button color= 'hsla(266, 92%, 66%, 1.00)'  title='Pract: Bottomsheet' onPress={()=> setScreen('bottomsheet')} />
                         <Button color= 'hsla(230, 65%, 68%, 1.00)'  title='Pract 11' onPress={()=> setScreen('Practica 11')}/>
+                        <Button color= 'hsla(281, 50%, 72%, 1.00)'  title='List: Section List' onPress={()=> setScreen('sectionlist')}/>
                     </View>
                 );
         

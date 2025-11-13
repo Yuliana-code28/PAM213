@@ -1,59 +1,87 @@
 import React, { useState } from 'react';
+
 import { Text, StyleSheet, View, Button, ActivityIndicator } from 'react-native';
 
-// Exportamos la funcion indicador
 export default function Indicator() {
-  // estos son los estados
-  const [cargando, setCargando] = useState(false);
+  const [cargando, setCargando] = useState(false); 
+
   const [mostrarContenido, setMostrarContenido] = useState(false);
 
-  // Función que maneja su funcionamiento
-  const manejarCarga = () => {
+  const [mensajePrompt, setMensajePrompt] = useState('Presiona "Acción" para comenzar');
+
+  const manejarCarga = () => { 
     setCargando(true);
     setMostrarContenido(false);
+    setMensajePrompt('Cargando... por favor espera');
 
     setTimeout(() => {
       setCargando(false);
       setMostrarContenido(true);
-    }, 5000); 
+      setMensajePrompt('¡Acción completada!');
+    }, 5000);
   };
 
-  // View
+  const cancelarCarga = () => {
+    setCargando(false);
+    setMostrarContenido(false);
+    setMensajePrompt('Carga cancelada');
+  };
+
   return (
     <View style={styles.contenedor}>
       <Text style={styles.titulo}>Practica: Activity Indicator</Text>
-      
-      <Button color='hsla(329, 92%, 66%, 1.00)' title="Acción" onPress={manejarCarga} />
+      <Text style={styles.prompt}>{mensajePrompt}</Text>
 
+      <View style={styles.botones}>
+        <Button color="#fb5c97ff" title="Acción" onPress={manejarCarga} />
+        <View style={{ width: 10 }} />
+        <Button color="#868585ff" title="Cancelar" onPress={cancelarCarga} /> 
+      </View>
+  
       {cargando && (
-        <ActivityIndicator size="large" color='hsla(266, 92%, 66%, 1.00)' style={styles.indicador} />
+        <ActivityIndicator
+          size="large"          
+          color="#ff4805ff"      
+          style={styles.indicador} 
+        />
       )}
-
       {mostrarContenido && (
-        <Text style={styles.contenido}> Acción realizada  </Text>
+        <Text style={styles.contenido}> ¡¡ Acción realizada :D!!</Text>
       )}
     </View>
   );
 }
 
-//Estilos
 const styles = StyleSheet.create({
   contenedor: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#ffffffff',
   },
   titulo: {
-    fontSize: 20,
-    marginBottom: 20,
+    fontSize: 24,
+    marginBottom: 10,
     fontWeight: 'bold',
+    color: '#000000ff',
+  }, 
+  prompt: {
+    fontSize: 16,
+    marginBottom: 20,
+    color: '#3448faff',
+  },
+  botones: {
+    flexDirection: 'row',
+    marginBottom: 20, 
   },
   indicador: {
-    marginVertical: 20,
+    marginVertical: 20, 
   },
   contenido: {
-    fontSize: 16,
+    fontSize: 18,
     color: 'green',
     marginTop: 10,
+    fontWeight: '600',
   },
 });
