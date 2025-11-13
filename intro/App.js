@@ -1,8 +1,10 @@
-import MenuScreen from './screens/MenuScreen'
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import MenuScreen from './screens/MenuScreen';
 
 export default function App() {
-  
   return (
-    <MenuScreen/>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <MenuScreen />
+    </GestureHandlerRootView>
   );
 }
